@@ -1,4 +1,4 @@
-package wil.gaboury.jugsql;
+package io.github.thecreamedcorn;
 
 import java.util.HashSet;
 import java.util.List;

@@ -1,4 +1,4 @@
-package wil.gaboury.jugsql;
+package io.github.thecreamedcorn;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

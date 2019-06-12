@@ -1,4 +1,4 @@
-package wil.gaboury.jugsql;
+package io.github.thecreamedcorn;
 
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -22,7 +22,7 @@ public class ModuleScanner {
         if (!m.matches()) {
             throw new AssertionError("found sql command with no annotation on line " + lineNum + ".");
         }
-        return m.group("name");
+        return m.group("name").toLowerCase();
     }
 
     public String getStatement() {
@@ -44,11 +44,11 @@ public class ModuleScanner {
         return String.join(" ", strs);
     }
 
-    //-------------------------[ helper methods ]-----------------------
-
-    private boolean hasNext() {
+    public boolean hasNext() {
         return sc.hasNext();
     }
+
+    //-------------------------[ helper methods ]-----------------------
 
     private String getLine() {
         return currentLine;
