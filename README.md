@@ -9,3 +9,4 @@ In essence this library is a big JDBC wrapper that allows for one to put their S
 + be able to fill in sql parameters by name and easy string interpolation of statements
 + easy POJO mapping (even nested POJO's via database relations)
 + thread safe and able to use connection pools
++ extensive unit testing using HSQLDB
