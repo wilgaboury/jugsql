@@ -2,10 +2,13 @@ package io.github.thecreamedcorn;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
+import org.hsqldb.Server;
+import org.hsqldb.persist.HsqlProperties;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.nio.file.Files;
 
 public class TestUtils {
@@ -33,6 +36,15 @@ public class TestUtils {
 
         //TODO implement this jawn
 
+        HsqlProperties properties = new HsqlProperties();
+        properties.setProperty("server.database.0", "mem:temp");
+        properties.setProperty("server.dbname.0", "test");
+
+        Server server = new Server();
+        server.setProperties(properties);
+        server.setLogWriter(new PrintWriter());
+
+        running = true;
     }
 
     public static void stopDatabase() throws Exception {
@@ -49,5 +61,7 @@ public class TestUtils {
         } else {
             sqlToolRcFileHomeDir.delete();
         }
+
+        running = false;
     }
 }
