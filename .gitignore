@@ -2,3 +2,5 @@
 target
 out
 ideaProjects.iml
+src/test/resources/hsqldb-2.5.0/hsqldb.log
+src/test/resources/hsqldb-2.5.0/hsqldb.err.log
